@@ -4,7 +4,8 @@
   // Fill these in as releases are published. Empty = the button shows a "soon" badge instead of a dead link.
   var LINKS = {
     xenon: { source: '', desktop: '' },
-    iridium: { source: '' }
+    iridium: { source: '' },
+    support: { donate: '' }
   };
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
