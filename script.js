@@ -66,6 +66,20 @@
     });
   }
 
+  // accent picker: recolors the whole page (and remembers it on this device)
+  var ACCENTS = ['teal', 'mint', 'sky', 'blue', 'violet', 'orchid', 'rose', 'silver'];
+  var swBtns = document.querySelectorAll('button.sw[data-accent]');
+  var setAccent = function (name, save) {
+    if (ACCENTS.indexOf(name) < 0) return;
+    document.documentElement.setAttribute('data-accent', name);
+    swBtns.forEach(function (b) { b.setAttribute('aria-checked', String(b.getAttribute('data-accent') === name)); });
+    if (save) { try { localStorage.setItem('nbl_accent', name); } catch (e) { /* private mode */ } }
+  };
+  try { setAccent(localStorage.getItem('nbl_accent'), false); } catch (e) { /* no storage */ }
+  swBtns.forEach(function (b) {
+    b.addEventListener('click', function () { setAccent(b.getAttribute('data-accent'), true); });
+  });
+
   // gentle tilt on the hero mock-ups (mouse only)
   if (!reduce && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     document.querySelectorAll('[data-tilt]').forEach(function (el) {

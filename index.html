@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>NBL Innovations — Xenon &amp; Iridium: private apps for the people you know</title>
 <meta name="description" content="Xenon is a private, self-hosted chat you run yourself. Iridium shows who's around and who's down to play. Small groups, your own server, no ads or trackers." />
-<meta name="theme-color" content="#06080b" />
+<meta name="theme-color" content="#070a10" />
 <meta property="og:title" content="NBL Innovations — Xenon &amp; Iridium" />
 <meta property="og:description" content="Private, self-hosted apps for small groups. No ads, no trackers." />
 <meta property="og:type" content="website" />
@@ -161,7 +161,7 @@
       <div class="head reveal">
         <span class="eyebrow">Design</span>
         <h2>One recognizable look. Two skins.</h2>
-        <p>Both apps share the same visual language: deep black surfaces, a single accent per app, and crisp outline icons. Xenon speaks in teal, Iridium in silver.</p>
+        <p>Both apps share the same visual language: deep dark surfaces, crisp outline icons, and one accent color you choose from eight evenly-bright options. Xenon starts out teal, Iridium silver &mdash; then it&rsquo;s yours.</p>
       </div>
 
       <div class="design-grid">
@@ -190,20 +190,23 @@
         <div class="design-side">
           <div class="panel reveal" style="--d:80ms">
             <h3>Palette</h3>
-            <div class="swatches">
-              <div class="sw"><i style="background:#7fe6ee"></i><b>Xenon Teal</b><code>#7fe6ee</code></div>
-              <div class="sw"><i style="background:#2bb3c2"></i><b>Deep Teal</b><code>#2bb3c2</code></div>
-              <div class="sw"><i style="background:#c7ccd1"></i><b>Iridium Silver</b><code>#c7ccd1</code></div>
-              <div class="sw"><i style="background:#8f99a5"></i><b>Steel</b><code>#8f99a5</code></div>
-              <div class="sw"><i style="background:#0e1116;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)"></i><b>Ink</b><code>#0e1116</code></div>
-              <div class="sw"><i style="background:#000;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)"></i><b>Black</b><code>#000000</code></div>
+            <div class="swatches" role="radiogroup" aria-label="Accent color">
+              <button type="button" class="sw" role="radio" aria-checked="true" data-accent="teal"><i style="background:#7fe6ee"></i><b>Teal</b><code>#7fe6ee</code></button>
+              <button type="button" class="sw" role="radio" aria-checked="false" data-accent="mint"><i style="background:#88e4bd"></i><b>Mint</b><code>#88e4bd</code></button>
+              <button type="button" class="sw" role="radio" aria-checked="false" data-accent="sky"><i style="background:#86d9ff"></i><b>Sky</b><code>#86d9ff</code></button>
+              <button type="button" class="sw" role="radio" aria-checked="false" data-accent="blue"><i style="background:#a3d0ff"></i><b>Blue</b><code>#a3d0ff</code></button>
+              <button type="button" class="sw" role="radio" aria-checked="false" data-accent="violet"><i style="background:#c2c6ff"></i><b>Violet</b><code>#c2c6ff</code></button>
+              <button type="button" class="sw" role="radio" aria-checked="false" data-accent="orchid"><i style="background:#e8b9fd"></i><b>Orchid</b><code>#e8b9fd</code></button>
+              <button type="button" class="sw" role="radio" aria-checked="false" data-accent="rose"><i style="background:#ffb1d5"></i><b>Rose</b><code>#ffb1d5</code></button>
+              <button type="button" class="sw" role="radio" aria-checked="false" data-accent="silver"><i style="background:#c7ccd1"></i><b>Silver</b><code>#c7ccd1</code></button>
             </div>
+            <p class="hint">Tap a color &mdash; this page (and the apps) will wear it.</p>
           </div>
           <div class="panel reveal" style="--d:140ms">
             <h3>Icons &amp; type</h3>
             <div class="icon-row">
-              <img src="assets/xenon-mark.svg" alt="Xenon glass-orb icon" />
-              <img src="assets/iridium-mark.svg" alt="Iridium glass-orb icon" />
+              <img src="assets/xenon-mark.svg" alt="Xenon orb icon" />
+              <img src="assets/iridium-mark.svg" alt="Iridium orb icon" />
               <span class="outline"><svg class="ico"><use href="#i-gamepad"/></svg></span>
               <span class="outline"><svg class="ico"><use href="#i-bulb"/></svg></span>
               <span class="outline"><svg class="ico"><use href="#i-lock"/></svg></span>
@@ -332,6 +335,40 @@
         <div class="el i"><small>77</small><b>Ir</b><span>Iridium<br>noble metal</span></div>
         <div class="el next"><small>?</small><b>&mdash;</b><span>Next<br>element</span></div>
       </div>
+    </div>
+    <div class="wrap family reveal" aria-label="The element family">
+        <figure class="idea">
+          <svg viewBox="0 0 96 96" role="img" aria-label="Krypton icon"><rect width="96" height="96" rx="22" fill="#0b0f14"/><circle cx="48" cy="48" r="28" fill="#88e4bd"/><circle cx="39" cy="38" r="7" fill="#fff" fill-opacity="0.35"/><text x="48" y="56" text-anchor="middle" font-size="22" font-weight="500" fill="#0b0f14">Kr</text></svg>
+          <figcaption>Krypton<small>Idea &middot; 36</small></figcaption>
+        </figure>
+        <figure class="live">
+          <svg viewBox="0 0 96 96" role="img" aria-label="Xenon icon"><rect width="96" height="96" rx="22" fill="#0b0f14"/><circle cx="48" cy="48" r="28" fill="#7fe6ee"/><circle cx="39" cy="38" r="7" fill="#fff" fill-opacity="0.35"/><text x="48" y="56" text-anchor="middle" font-size="22" font-weight="500" fill="#0b0f14">Xe</text></svg>
+          <figcaption>Xenon<small>Available &middot; 54</small></figcaption>
+        </figure>
+        <figure class="idea">
+          <svg viewBox="0 0 96 96" role="img" aria-label="Neon icon"><rect width="96" height="96" rx="22" fill="#0b0f14"/><circle cx="48" cy="48" r="28" fill="#86d9ff"/><circle cx="39" cy="38" r="7" fill="#fff" fill-opacity="0.35"/><text x="48" y="56" text-anchor="middle" font-size="22" font-weight="500" fill="#0b0f14">Ne</text></svg>
+          <figcaption>Neon<small>Idea &middot; 10</small></figcaption>
+        </figure>
+        <figure class="idea">
+          <svg viewBox="0 0 96 96" role="img" aria-label="Osmium icon"><rect width="96" height="96" rx="22" fill="#0b0f14"/><circle cx="48" cy="48" r="28" fill="#a3d0ff"/><circle cx="39" cy="38" r="7" fill="#fff" fill-opacity="0.35"/><text x="48" y="56" text-anchor="middle" font-size="22" font-weight="500" fill="#0b0f14">Os</text></svg>
+          <figcaption>Osmium<small>Idea &middot; 76</small></figcaption>
+        </figure>
+        <figure class="idea">
+          <svg viewBox="0 0 96 96" role="img" aria-label="Argon icon"><rect width="96" height="96" rx="22" fill="#0b0f14"/><circle cx="48" cy="48" r="28" fill="#c2c6ff"/><circle cx="39" cy="38" r="7" fill="#fff" fill-opacity="0.35"/><text x="48" y="56" text-anchor="middle" font-size="22" font-weight="500" fill="#0b0f14">Ar</text></svg>
+          <figcaption>Argon<small>Idea &middot; 18</small></figcaption>
+        </figure>
+        <figure class="idea">
+          <svg viewBox="0 0 96 96" role="img" aria-label="Helium icon"><rect width="96" height="96" rx="22" fill="#0b0f14"/><circle cx="48" cy="48" r="28" fill="#e8b9fd"/><circle cx="39" cy="38" r="7" fill="#fff" fill-opacity="0.35"/><text x="48" y="56" text-anchor="middle" font-size="22" font-weight="500" fill="#0b0f14">He</text></svg>
+          <figcaption>Helium<small>Idea &middot; 2</small></figcaption>
+        </figure>
+        <figure class="idea">
+          <svg viewBox="0 0 96 96" role="img" aria-label="Rhodium icon"><rect width="96" height="96" rx="22" fill="#0b0f14"/><circle cx="48" cy="48" r="28" fill="#ffb1d5"/><circle cx="39" cy="38" r="7" fill="#fff" fill-opacity="0.35"/><text x="48" y="56" text-anchor="middle" font-size="22" font-weight="500" fill="#0b0f14">Rh</text></svg>
+          <figcaption>Rhodium<small>Idea &middot; 45</small></figcaption>
+        </figure>
+        <figure class="live">
+          <svg viewBox="0 0 96 96" role="img" aria-label="Iridium icon"><rect width="96" height="96" rx="22" fill="#0b0f14"/><circle cx="48" cy="48" r="28" fill="#c7ccd1"/><circle cx="39" cy="38" r="7" fill="#fff" fill-opacity="0.35"/><text x="48" y="56" text-anchor="middle" font-size="22" font-weight="500" fill="#0b0f14">Ir</text></svg>
+          <figcaption>Iridium<small>Available &middot; 77</small></figcaption>
+        </figure>
     </div>
   </section>
 
