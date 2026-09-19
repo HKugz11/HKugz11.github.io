@@ -50,6 +50,7 @@
       <a href="#design">Design</a>
       <a href="#features">Features</a>
       <a href="#how">How it works</a>
+      <a href="#setup">Set up</a>
       <a href="#about">About</a>
       <a href="#faq">FAQ</a>
       <a href="#donate">Donate</a>
@@ -247,9 +248,156 @@
         <p>No accounts with a company, no sign-up forms. If you can run a couple of commands, you can host it.</p>
       </div>
       <div class="steps">
-        <div class="step reveal"><h3>Run the server</h3><p>Install Node.js, download the project, then <code>npm install</code> and <code>npm start</code>. That's the whole backend.</p></div>
+        <div class="step reveal"><h3>Run the server</h3><p>Install Node.js, download the project, then <code>npm install</code> and <code>npm start</code>. That's the whole backend. <a class="inline" href="#setup">Full step-by-step guide &darr;</a></p></div>
         <div class="step reveal" style="--d:80ms"><h3>Share the address</h3><p>Send friends the link (and the access code for Xenon). A tunnel service lets you share it without opening router ports.</p></div>
         <div class="step reveal" style="--d:160ms"><h3>Everyone joins</h3><p>Open it in any browser, add it to the home screen on iPhone or Android, or use the desktop app.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETUP GUIDE -->
+  <section id="setup">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Set it up</span>
+        <h2>Host it yourself, step by step.</h2>
+        <p>Plan on 30&ndash;60 minutes the first time. You don't have to be an expert &mdash; but you'd be running a service other people use, so do it with a parent or guardian's OK, and only for people who are 13 or older.</p>
+      </div>
+
+      <p class="note preview reveal"><strong>Heads up:</strong> the source code isn't public yet, so steps 3 and 4 are a preview for now. Steps 1, 2 and 5 you can already do.</p>
+
+      <div class="need reveal">
+        <div><h3>You'll need</h3>
+          <ul>
+            <li>A computer that can stay on &mdash; an old laptop or mini PC is perfect</li>
+            <li>An internet connection</li>
+            <li>A free <a href="https://playit.gg/" target="_blank" rel="noopener noreferrer">playit.gg</a> account (an adult may need to help make it)</li>
+            <li>Optional: a free <a href="https://www.duckdns.org/" target="_blank" rel="noopener noreferrer">DuckDNS</a> name, for a friendly address and a trusted HTTPS lock</li>
+          </ul>
+        </div>
+        <div><h3>You don't need</h3>
+          <ul>
+            <li>A paid server, a domain name, or a credit card</li>
+            <li>To open ports on your router</li>
+            <li>To be a programmer &mdash; just comfortable typing a few commands</li>
+          </ul>
+        </div>
+      </div>
+
+      <ol class="guide">
+        <li class="gstep reveal">
+          <h3>Get a computer running Linux <small>(recommended)</small></h3>
+          <p>For a server that stays on, <strong>Ubuntu Server LTS</strong> is a great choice. <em>LTS</em> means &ldquo;long-term support&rdquo;: five years of free security updates. Just want to try it first? Skip this step &mdash; Windows and macOS run it fine on your own computer.</p>
+          <div class="links">
+            <a class="btn" href="https://ubuntu.com/download/server" target="_blank" rel="noopener noreferrer">Download Ubuntu Server LTS <svg class="ico"><use href="#i-arrow"/></svg></a>
+            <a class="btn" href="https://ubuntu.com/tutorials/install-ubuntu-server" target="_blank" rel="noopener noreferrer">Install guide <svg class="ico"><use href="#i-arrow"/></svg></a>
+          </div>
+        </li>
+
+        <li class="gstep reveal">
+          <h3>Install Node.js (LTS)</h3>
+          <p>Node.js is what runs the server. Pick the <strong>LTS</strong> version (18 or newer). Then open a terminal and check it worked:</p>
+          <pre class="cmd">node --version</pre>
+          <p>You should see a version number like <code>v22.x.x</code>. If it says &ldquo;not found&rdquo;, close the terminal and open a new one.</p>
+          <div class="links">
+            <a class="btn" href="https://nodejs.org/en/download" target="_blank" rel="noopener noreferrer">Node.js downloads <svg class="ico"><use href="#i-arrow"/></svg></a>
+            <a class="btn" href="https://nodejs.org/en/about/previous-releases" target="_blank" rel="noopener noreferrer">What is LTS? <svg class="ico"><use href="#i-arrow"/></svg></a>
+          </div>
+        </li>
+
+        <li class="gstep reveal">
+          <h3>Download the project</h3>
+          <p>Get the app you want from its source page (download the ZIP, or use <code>git clone</code>), unzip it, and open a terminal inside its <code>server</code> folder.</p>
+          <div class="links">
+            <a class="btn primary" data-link="xenon.source" href="#setup">Xenon source</a>
+            <a class="btn silver" data-link="iridium.source" href="#setup">Iridium source</a>
+          </div>
+        </li>
+
+        <li class="gstep reveal">
+          <h3>Install and start it</h3>
+          <p>Run these in the <code>server</code> folder. The first command downloads what the server needs.</p>
+          <div class="two">
+            <div>
+              <h4>Xenon</h4>
+              <pre class="cmd">npm install
+npm run setup   <span class="c"># pick an access code</span>
+npm start</pre>
+              <p>Then open <code>http://localhost:3000</code>.</p>
+            </div>
+            <div>
+              <h4>Iridium</h4>
+              <pre class="cmd">npm install
+npm start</pre>
+              <p>Then open <code>http://localhost:3200</code>.</p>
+            </div>
+          </div>
+          <p>If the page loads, it's working &mdash; on your own computer. Next, let your friends in.</p>
+        </li>
+
+        <li class="gstep reveal">
+          <h3>Let friends join from anywhere</h3>
+          <p>A tunnel gives your server a public address without opening router ports:</p>
+          <ol class="mini">
+            <li>Make a free account at <a href="https://playit.gg/" target="_blank" rel="noopener noreferrer">playit.gg</a> and install their agent on the same computer.</li>
+            <li>Choose <strong>Add Tunnel</strong> &rarr; type <strong>TCP</strong> &rarr; local address <code>127.0.0.1</code> &rarr; local port <code>3000</code> (Xenon) or <code>3200</code> (Iridium).</li>
+            <li>playit shows you a public address. Send it to your friends &mdash; and the access code, for Xenon.</li>
+            <li>For real visitor addresses, switch on <strong>PROXY protocol</strong> in the tunnel and set <code>"trustProxyProtocol": true</code> in <code>config.json</code>.</li>
+          </ol>
+          <p>Right now friends will open a long playit address, and browsers will warn that it isn't private. The next step fixes that for free.</p>
+          <div class="links">
+            <a class="btn" href="https://playit.gg/" target="_blank" rel="noopener noreferrer">Open playit.gg <svg class="ico"><use href="#i-arrow"/></svg></a>
+            <a class="btn" href="https://playit.gg/download" target="_blank" rel="noopener noreferrer">Download the agent <svg class="ico"><use href="#i-arrow"/></svg></a>
+            <a class="btn" href="https://playit.gg/support" target="_blank" rel="noopener noreferrer">playit help <svg class="ico"><use href="#i-arrow"/></svg></a>
+          </div>
+        </li>
+
+        <li class="gstep reveal">
+          <h3>A friendly address with a trusted lock <small>(optional, recommended)</small></h3>
+          <p>Voice calls and &ldquo;Add to Home Screen&rdquo; need a certificate that browsers trust, and it also removes the &ldquo;not private&rdquo; warning. You can get both free with <strong>DuckDNS</strong> (a free name like <code>yourname.duckdns.org</code>) and <strong>Let's Encrypt</strong> (free certificates).</p>
+          <ol class="mini">
+            <li>Go to <a href="https://www.duckdns.org/" target="_blank" rel="noopener noreferrer">duckdns.org</a>, sign in with one of their login options, and create a free name. Your <strong>token</strong> is shown at the top of the page &mdash; treat it like a password. Never post it or paste it into a chat.</li>
+            <li>Find your playit tunnel's IPv4 address: in a terminal run <code>nslookup your-tunnel-name.tun.ply.gg</code> (use the name playit shows you) and look for an address like <code>203.0.113.5</code>. If you only see a long address full of colons (IPv6), change the tunnel in playit to get an IPv4 one.</li>
+            <li>Type that IPv4 address into the <strong>current ip</strong> box next to your name on DuckDNS and click <strong>update ip</strong>.</li>
+            <li>On the server, inside the project's <code>server</code> folder, run the certificate script (Xenon). The email is only for renewal notices &mdash; use a parent's or a spare one.</li>
+          </ol>
+          <pre class="cmd">sudo DUCKDNS_SUB=yourname DUCKDNS_TOKEN=paste-your-token LE_EMAIL=you@example.com APP_DIR="$PWD" bash deploy/setup-letsencrypt.sh</pre>
+          <p>It gets the certificate, installs it, restarts Xenon, and renews itself automatically. Then share <code>https://yourname.duckdns.org:PORT</code> &mdash; the port is the one playit gave your tunnel. If playit ever gives you a new IP, update it on DuckDNS.</p>
+          <p><strong>Iridium:</strong> that script is Xenon's for now. For Iridium, <code>npm run gen-cert</code> makes a self-signed certificate (browsers will warn) until a matching script is added.</p>
+          <div class="links">
+            <a class="btn" href="https://www.duckdns.org/" target="_blank" rel="noopener noreferrer">Open DuckDNS <svg class="ico"><use href="#i-arrow"/></svg></a>
+            <a class="btn" href="https://letsencrypt.org/how-it-works/" target="_blank" rel="noopener noreferrer">How Let's Encrypt works <svg class="ico"><use href="#i-arrow"/></svg></a>
+          </div>
+        </li>
+
+        <li class="gstep reveal">
+          <h3>Keep it running <small>(Linux)</small></h3>
+          <p>So it starts by itself after a reboot, use the ready-made <code>systemd</code> service file in the project's <code>deploy</code> folder. Edit its <code>User=</code> and folder lines to match your setup, then:</p>
+          <pre class="cmd">sudo cp xenon.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable --now xenon</pre>
+          <p>(For Iridium, use <code>iridium.service</code> and <code>iridium</code>.) To update later: download the new version, run <code>npm install</code> again, and <code>sudo systemctl restart xenon</code>.</p>
+        </li>
+
+        <li class="gstep gstep-safe reveal">
+          <h3>Make it safe <small>(don't skip this)</small></h3>
+          <ul class="checks">
+            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>Keep image uploads off.</strong> They're off by default. Nobody reviews uploaded images, and you'd be responsible for them.</span></li>
+            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>Keep the access code private,</strong> and change it if it leaks.</span></li>
+            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>Turn on school-hours closing</strong> (<code>quietHours</code> in <code>config.json</code>) so nobody uses it in class.</span></li>
+            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>Check reports.</strong> Run <code>node admin.js reports</code> often, and ban or delete accounts that cause trouble.</span></li>
+            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>13 and older only.</strong> If you learn someone is younger, remove their account.</span></li>
+            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>Read the responsible-use guide</strong> included in each project before you invite anyone.</span></li>
+          </ul>
+        </li>
+      </ol>
+
+      <div class="faq reveal trouble">
+        <h3>Something not working?</h3>
+        <details><summary>&ldquo;node&rdquo; or &ldquo;npm&rdquo; isn't recognized</summary><p>Close your terminal and open a new one after installing Node.js. If it still fails, reinstall the <strong>LTS</strong> version from nodejs.org.</p></details>
+        <details><summary>The page works on my computer but not for friends</summary><p>Check that the playit agent is running, that the tunnel's local port matches the app (3000 for Xenon, 3200 for Iridium), and that your friends are using the address playit gave you &mdash; not <code>localhost</code>.</p></details>
+        <details><summary>&ldquo;Port already in use&rdquo;</summary><p>Another copy is probably already running. Stop it, or change <code>port</code> in <code>config.json</code> (and the tunnel's local port to match).</p></details>
+        <details><summary>My browser says the connection isn't private</summary><p>That's normal with a self-made certificate. It's safe to continue for your own server; a trusted certificate (for example through a free DuckDNS name and Let's Encrypt) removes the warning.</p></details>
       </div>
     </div>
   </section>

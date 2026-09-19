@@ -88,6 +88,24 @@
     b.addEventListener('click', function () { setAccent(b.getAttribute('data-accent'), true); });
   });
 
+  // copy buttons on the setup guide's command boxes
+  document.querySelectorAll('pre.cmd').forEach(function (pre) {
+    // grab the commands now, before the button is added (and drop the grey "# comments")
+    var text = pre.innerText.replace(/[ \t]*#.*$/gm, '').trim();
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'copy';
+    btn.textContent = 'Copy';
+    btn.setAttribute('aria-label', 'Copy these commands');
+    btn.addEventListener('click', function () {
+      var done = function () { btn.textContent = 'Copied!'; setTimeout(function () { btn.textContent = 'Copy'; }, 1600); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { btn.textContent = 'Press Ctrl+C'; });
+      } else { btn.textContent = 'Press Ctrl+C'; }
+    });
+    pre.appendChild(btn);
+  });
+
   // gentle tilt on the hero mock-ups (mouse only)
   if (!reduce && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     document.querySelectorAll('[data-tilt]').forEach(function (el) {
