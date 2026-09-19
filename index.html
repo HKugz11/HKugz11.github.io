@@ -63,9 +63,9 @@
   <section class="hero" id="top">
     <div class="wrap hero-grid">
       <div class="reveal">
-        <span class="eyebrow">Self-hosted · Open source · No trackers</span>
+        <span class="eyebrow">Self-hosted · Open source soon · No trackers</span>
         <h1>Apps for the people <span class="grad">you actually know.</span></h1>
-        <p class="lead">Xenon is a private chat you run yourself. Iridium shows who's around and who's down to play. Your own server, your own group — nobody in the middle.</p>
+        <p class="lead">Xenon is a private chat you run yourself. Iridium shows who's around and who's down to play. Your own server, your own group, run by someone you know.</p>
         <div class="cta-row">
           <a class="btn primary" href="#apps">Explore the apps <svg class="ico"><use href="#i-arrow"/></svg></a>
           <a class="btn" href="#how">How it works</a>
@@ -229,8 +229,8 @@
       </div>
       <div class="features">
         <div class="feat reveal"><div class="ic"><svg class="ico"><use href="#i-server"/></svg></div><h3>You own your data</h3><p>Everything lives on your server. No company account, no cloud, no one else holding your conversations.</p></div>
-        <div class="feat reveal" style="--d:60ms"><div class="ic"><svg class="ico"><use href="#i-lock"/></svg></div><h3>End-to-end encrypted DMs</h3><p>Direct messages and group chats are encrypted in the browser. The server only ever stores ciphertext.</p></div>
-        <div class="feat reveal" style="--d:120ms"><div class="ic"><svg class="ico"><use href="#i-eyeoff"/></svg></div><h3>No ads, no trackers</h3><p>Nothing phones home — no analytics, no third-party scripts. Translation even runs on your own machine.</p></div>
+        <div class="feat reveal" style="--d:60ms"><div class="ic"><svg class="ico"><use href="#i-lock"/></svg></div><h3>End-to-end encrypted DMs</h3><p>Direct messages and group chats are encrypted in the browser, so the server stores only scrambled text. (It still relies on whoever runs the server being honest &mdash; see the straight-talk section below.)</p></div>
+        <div class="feat reveal" style="--d:120ms"><div class="ic"><svg class="ico"><use href="#i-eyeoff"/></svg></div><h3>No ads, no trackers</h3><p>No analytics and no third-party scripts. Voice calls use a public Google STUN server to connect. Translation runs on your own machine.</p></div>
         <div class="feat reveal"><div class="ic"><svg class="ico"><use href="#i-devices"/></svg></div><h3>Works everywhere</h3><p>Installs on iPhone and Android from the browser, plus desktop apps for Windows, macOS and Linux.</p></div>
         <div class="feat reveal" style="--d:60ms"><div class="ic"><svg class="ico"><use href="#i-zap"/></svg></div><h3>Light and fast</h3><p>One small Node.js server. It runs happily on a spare PC, a Raspberry Pi or a small VPS.</p></div>
         <div class="feat reveal" style="--d:120ms"><div class="ic"><svg class="ico"><use href="#i-code"/></svg></div><h3>Open source</h3><p>MIT licensed and readable end to end. Change it, fork it, or just see exactly what it does.</p></div>
@@ -266,18 +266,19 @@
         <div class="talk-card good reveal">
           <h3><svg class="ico"><use href="#i-check"/></svg>What's protected</h3>
           <ul>
-            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>DMs and group chats are end-to-end encrypted.</strong> The server can't read them.</span></li>
-            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>No ads, analytics or trackers.</strong> Nothing is sent to third parties.</span></li>
-            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>Passwords are hashed</strong> and sign-in attempts are rate-limited.</span></li>
-            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>Fully open source.</strong> Every line is there to inspect.</span></li>
+            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>DMs and group chats are encrypted in your browser.</strong> Someone who steals the server's data files can't read them.</span></li>
+            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>No ads, analytics or trackers.</strong> (Voice calls use a public Google STUN server.)</span></li>
+            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>Passwords are hashed,</strong> wrong-password guesses are locked out, and a bad message can't crash the server.</span></li>
+            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>Safety tools built in:</strong> block, report, delete my account, an admin tool for the person running it, and optional school-hours closing.</span></li>
+            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>Open source is coming.</strong> The code will be public so anyone can inspect it.</span></li>
           </ul>
         </div>
         <div class="talk-card know reveal" style="--d:80ms">
           <h3><svg class="ico"><use href="#i-alert"/></svg>What to know</h3>
           <ul>
-            <li><svg class="ico"><use href="#i-alert"/></svg><span><strong>Channels aren't end-to-end encrypted.</strong> Whoever runs the server can read them, and the app says so.</span></li>
+            <li><svg class="ico"><use href="#i-alert"/></svg><span><strong>Encryption has limits.</strong> Whoever runs the server could read your DMs by changing the server's code, and you can't verify your friends' keys yet. Channels aren't encrypted at all &mdash; the operator can read them, and the app says so.</span></li>
             <li><svg class="ico"><use href="#i-alert"/></svg><span><strong>You're the operator.</strong> You're responsible for your server and what happens on it.</span></li>
-            <li><svg class="ico"><use href="#i-alert"/></svg><span><strong>Made for small groups who already know each other,</strong> not public communities. Younger users should have a parent or guardian involved.</span></li>
+            <li><svg class="ico"><use href="#i-alert"/></svg><span><strong>Made for small groups who already know each other,</strong> not public communities. Sign-up asks people to confirm they're 13 or older (that's a promise, not age verification), and younger kids shouldn't use it.</span></li>
             <li><svg class="ico"><use href="#i-alert"/></svg><span><strong>Iridium keeps status and posts in plain text</strong> on your server.</span></li>
           </ul>
         </div>
@@ -328,7 +329,7 @@
       <div class="reveal">
         <span class="eyebrow">About NBL Innovations</span>
         <h2>NBL is short for <span class="grad">noble.</span></h2>
-        <p>The noble gases and noble metals are known for keeping to themselves — stable, pure, and unbothered by everything around them. Xenon is a noble gas. Iridium is a noble metal. Every app we make is named after one, and built the same way: small, private, and not leaking anything to anyone.</p>
+        <p>The noble gases and noble metals are known for keeping to themselves — stable, pure, and unbothered by everything around them. Xenon is a noble gas. Iridium is a noble metal. Every app we make is named after one, and built the same way: small, private by design, and honest about their limits.</p>
       </div>
       <div class="about-tiles reveal" style="--d:100ms" aria-hidden="true">
         <div class="el x"><small>54</small><b>Xe</b><span>Xenon<br>noble gas</span></div>
