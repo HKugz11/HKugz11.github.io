@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HKugz — Xenon &amp; Iridium: private apps for the people you know</title>
+<meta name="description" content="Xenon is a private, self-hosted chat you run yourself. Iridium shows who's around and who's down to play. Small groups, your own server, no ads or trackers." />
+<meta name="theme-color" content="#06080b" />
+<meta property="og:title" content="HKugz — Xenon &amp; Iridium" />
+<meta property="og:description" content="Private, self-hosted apps for small groups. No ads, no trackers." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="assets/xenon-mark.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-devices" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></symbol>
+  <symbol id="i-eyeoff" viewBox="0 0 24 24"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><path d="M1 1l22 22"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-gamepad" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="6"/><path d="M6 12h4M8 10v4"/><circle cx="15" cy="13" r=".6"/><circle cx="18" cy="11" r=".6"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  <symbol id="i-at" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></symbol>
+</svg>
+
+<div class="ambient" aria-hidden="true"><div class="grid-bg"></div></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="HKugz home"><span class="brand-dot"></span>HKugz</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#apps">Apps</a>
+      <a href="#design">Design</a>
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn sm primary" href="#get">Get started</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">Self-hosted · Open source · No trackers</span>
+        <h1>Apps for the people <span class="grad">you actually know.</span></h1>
+        <p class="lead">Xenon is a private chat you run yourself. Iridium shows who's around and who's down to play. Your own server, your own group — nobody in the middle.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#apps">Explore the apps <svg class="ico"><use href="#i-arrow"/></svg></a>
+          <a class="btn" href="#how">How it works</a>
+        </div>
+        <div class="trust">
+          <span><svg class="ico"><use href="#i-lock"/></svg>Encrypted DMs &amp; groups</span>
+          <span><svg class="ico"><use href="#i-devices"/></svg>Phone, tablet &amp; desktop</span>
+          <span><svg class="ico"><use href="#i-eyeoff"/></svg>Zero analytics</span>
+        </div>
+      </div>
+
+      <div class="stage reveal" style="--d:120ms" aria-hidden="true">
+        <img class="orb x" src="assets/xenon-mark.svg" alt="" />
+        <img class="orb i" src="assets/iridium-mark.svg" alt="" />
+
+        <div class="mock chat" data-tilt>
+          <div class="win-bar"><span class="dots"><i></i><i></i><i></i></span><b>#lobby</b><span class="dim">4 online</span></div>
+          <div class="chat-body">
+            <div class="msg"><span class="av">n</span><div class="bub"><em>nova</em>anyone up for game night?</div></div>
+            <div class="msg hl"><span class="av">k</span><div class="bub"><em>kai</em>I'm in — <span class="mention">@nova</span> bring snacks<br><span class="rx"><svg class="ico"><use href="#i-heart"/></svg>2</span></div></div>
+            <div class="msg me"><div class="bub">on my way</div></div>
+          </div>
+          <div class="typing"><i></i><i></i><i></i> sky is typing</div>
+          <div class="composer">Message #lobby</div>
+        </div>
+
+        <div class="mock status" data-tilt>
+          <div class="st-head"><span>Your status</span><span class="pill"><span class="dot on"></span>online</span></div>
+          <div class="st-body">
+            <div class="lfg">
+              <div class="lfg-top"><svg class="ico"><use href="#i-gamepad"/></svg>kai <small>is down to play Rocket League</small></div>
+              <div class="reply"><b>sky</b> I'm down!</div>
+              <div class="reply"><b>mira</b> give me 10 min</div>
+              <div class="reply-in"><span>I'm down to play too!</span><i>send</i></div>
+            </div>
+            <div class="friends">
+              <div class="fr"><span class="av">n</span>nova<span class="t"><span class="dot on"></span></span></div>
+              <div class="fr"><span class="av">s</span>sky<span class="t"><span class="dot away"></span></span></div>
+              <div class="fr"><span class="av">m</span>mira<span class="t"><span class="dot off"></span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPS -->
+  <section id="apps">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">The apps</span>
+        <h2>Two small apps, made to be run by you.</h2>
+        <p>Each one is a single lightweight server plus a web app that installs on any device. Start with one, add the other whenever you like.</p>
+      </div>
+      <div class="apps">
+        <article class="app x reveal">
+          <img class="app-ico" src="assets/xenon-mark.svg" alt="Xenon icon" />
+          <h3>Xenon</h3>
+          <div class="tag">Private chat</div>
+          <p>Channels, direct messages and group chats for a small group — with reactions, replies, @mentions and voice calls. Feels modern, runs on hardware you own.</p>
+          <ul class="chips">
+            <li><svg class="ico"><use href="#i-chat"/></svg>Channels</li>
+            <li><svg class="ico"><use href="#i-lock"/></svg>Encrypted DMs &amp; groups</li>
+            <li><svg class="ico"><use href="#i-mic"/></svg>Voice calls</li>
+            <li><svg class="ico"><use href="#i-heart"/></svg>Reactions &amp; replies</li>
+            <li><svg class="ico"><use href="#i-at"/></svg>@mentions</li>
+            <li><svg class="ico"><use href="#i-globe"/></svg>Self-hosted translation</li>
+          </ul>
+          <a class="btn primary" href="#get">Get Xenon <svg class="ico"><use href="#i-arrow"/></svg></a>
+        </article>
+
+        <article class="app i reveal" style="--d:100ms">
+          <img class="app-ico" src="assets/iridium-mark.svg" alt="Iridium icon" />
+          <h3>Iridium</h3>
+          <div class="tag">Live hangout status</div>
+          <p>See who's around at a glance. Set your status, appear offline when you need quiet, and post "down to play" so friends can jump in with a reply.</p>
+          <ul class="chips">
+            <li><svg class="ico"><use href="#i-users"/></svg>Live friend status</li>
+            <li><svg class="ico"><use href="#i-eyeoff"/></svg>Appear offline</li>
+            <li><svg class="ico"><use href="#i-gamepad"/></svg>Down to play</li>
+            <li><svg class="ico"><use href="#i-chat"/></svg>Replies</li>
+            <li><svg class="ico"><use href="#i-phone"/></svg>Installs on your phone</li>
+          </ul>
+          <a class="btn silver" href="#get">Get Iridium <svg class="ico"><use href="#i-arrow"/></svg></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIGN -->
+  <section id="design">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Design</span>
+        <h2>One recognizable look. Two skins.</h2>
+        <p>Both apps share the same visual language: deep black surfaces, a single accent per app, and crisp outline icons. Xenon speaks in teal, Iridium in silver.</p>
+      </div>
+
+      <div class="design-grid">
+        <div class="skin-demo reveal" id="skinDemo" data-skin="modern">
+          <div class="skin-tabs" role="tablist" aria-label="Choose a skin">
+            <button role="tab" aria-selected="true" data-skin="modern">Modern</button>
+            <button role="tab" aria-selected="false" data-skin="terminal">Terminal</button>
+          </div>
+          <div class="skin-screen">
+            <div class="sk-bar"><b>#lobby</b><span>4 online</span></div>
+            <div class="sk-modern">
+              <div class="msg"><span class="av">n</span><div class="bub"><em>nova</em>anyone up for game night?</div></div>
+              <div class="msg"><span class="av">k</span><div class="bub"><em>kai</em>in — <span class="mention">@nova</span> bring snacks</div></div>
+              <div class="msg me"><div class="bub">on my way</div></div>
+            </div>
+            <div class="sk-term" aria-hidden="true">
+              <p><span class="ts">[17:51]</span> <span class="nm">nova</span> anyone up for game night?</p>
+              <p><span class="ts">[17:52]</span> <span class="nm">kai</span> in — <span class="mention">@nova</span> bring snacks</p>
+              <p><span class="ts">[17:52]</span> <span class="nm">you</span> on my way</p>
+              <p class="prompt">&gt;<span class="caret"></span></p>
+            </div>
+          </div>
+          <p class="skin-cap">Switch skins anytime in the app — <em>modern</em> is the default, <em>terminal</em> is the classic.</p>
+        </div>
+
+        <div class="design-side">
+          <div class="panel reveal" style="--d:80ms">
+            <h3>Palette</h3>
+            <div class="swatches">
+              <div class="sw"><i style="background:#7fe6ee"></i><b>Xenon Teal</b><code>#7fe6ee</code></div>
+              <div class="sw"><i style="background:#2bb3c2"></i><b>Deep Teal</b><code>#2bb3c2</code></div>
+              <div class="sw"><i style="background:#c7ccd1"></i><b>Iridium Silver</b><code>#c7ccd1</code></div>
+              <div class="sw"><i style="background:#8f99a5"></i><b>Steel</b><code>#8f99a5</code></div>
+              <div class="sw"><i style="background:#0e1116;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)"></i><b>Ink</b><code>#0e1116</code></div>
+              <div class="sw"><i style="background:#000;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)"></i><b>Black</b><code>#000000</code></div>
+            </div>
+          </div>
+          <div class="panel reveal" style="--d:140ms">
+            <h3>Icons &amp; type</h3>
+            <div class="icon-row">
+              <img src="assets/xenon-mark.svg" alt="Xenon glass-orb icon" />
+              <img src="assets/iridium-mark.svg" alt="Iridium glass-orb icon" />
+              <span class="outline"><svg class="ico"><use href="#i-gamepad"/></svg></span>
+              <span class="outline"><svg class="ico"><use href="#i-bulb"/></svg></span>
+              <span class="outline"><svg class="ico"><use href="#i-lock"/></svg></span>
+              <span class="outline"><svg class="ico"><use href="#i-mic"/></svg></span>
+            </div>
+            <div class="type-row"><span class="t-sans">Aa</span><span class="t-mono">Aa</span><small>Clean system sans for the modern skin, monospace for terminal. Outline icons at a 2px stroke.</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Why self-hosted</span>
+        <h2>Built around privacy, not the other way round.</h2>
+        <p>Running your own server isn't a compromise — it's the feature. Here's what that gets you.</p>
+      </div>
+      <div class="features">
+        <div class="feat reveal"><div class="ic"><svg class="ico"><use href="#i-server"/></svg></div><h3>You own your data</h3><p>Everything lives on your server. No company account, no cloud, no one else holding your conversations.</p></div>
+        <div class="feat reveal" style="--d:60ms"><div class="ic"><svg class="ico"><use href="#i-lock"/></svg></div><h3>End-to-end encrypted DMs</h3><p>Direct messages and group chats are encrypted in the browser. The server only ever stores ciphertext.</p></div>
+        <div class="feat reveal" style="--d:120ms"><div class="ic"><svg class="ico"><use href="#i-eyeoff"/></svg></div><h3>No ads, no trackers</h3><p>Nothing phones home — no analytics, no third-party scripts. Translation even runs on your own machine.</p></div>
+        <div class="feat reveal"><div class="ic"><svg class="ico"><use href="#i-devices"/></svg></div><h3>Works everywhere</h3><p>Installs on iPhone and Android from the browser, plus desktop apps for Windows, macOS and Linux.</p></div>
+        <div class="feat reveal" style="--d:60ms"><div class="ic"><svg class="ico"><use href="#i-zap"/></svg></div><h3>Light and fast</h3><p>One small Node.js server. It runs happily on a spare PC, a Raspberry Pi or a small VPS.</p></div>
+        <div class="feat reveal" style="--d:120ms"><div class="ic"><svg class="ico"><use href="#i-code"/></svg></div><h3>Open source</h3><p>MIT licensed and readable end to end. Change it, fork it, or just see exactly what it does.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section id="how">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">How it works</span>
+        <h2>From zero to chatting in three steps.</h2>
+        <p>No accounts with a company, no sign-up forms. If you can run a couple of commands, you can host it.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><h3>Run the server</h3><p>Install Node.js, download the project, then <code>npm install</code> and <code>npm start</code>. That's the whole backend.</p></div>
+        <div class="step reveal" style="--d:80ms"><h3>Share the address</h3><p>Send friends the link (and the access code for Xenon). A tunnel service lets you share it without opening router ports.</p></div>
+        <div class="step reveal" style="--d:160ms"><h3>Everyone joins</h3><p>Open it in any browser, add it to the home screen on iPhone or Android, or use the desktop app.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRAIGHT TALK -->
+  <section id="honest">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Straight talk</span>
+        <h2>What's protected — and what to know.</h2>
+        <p>Privacy claims are only useful if they're accurate. Here's the plain version.</p>
+      </div>
+      <div class="talk">
+        <div class="talk-card good reveal">
+          <h3><svg class="ico"><use href="#i-check"/></svg>What's protected</h3>
+          <ul>
+            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>DMs and group chats are end-to-end encrypted.</strong> The server can't read them.</span></li>
+            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>No ads, analytics or trackers.</strong> Nothing is sent to third parties.</span></li>
+            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>Passwords are hashed</strong> and sign-in attempts are rate-limited.</span></li>
+            <li><svg class="ico"><use href="#i-check"/></svg><span><strong>Fully open source.</strong> Every line is there to inspect.</span></li>
+          </ul>
+        </div>
+        <div class="talk-card know reveal" style="--d:80ms">
+          <h3><svg class="ico"><use href="#i-alert"/></svg>What to know</h3>
+          <ul>
+            <li><svg class="ico"><use href="#i-alert"/></svg><span><strong>Channels aren't end-to-end encrypted.</strong> Whoever runs the server can read them, and the app says so.</span></li>
+            <li><svg class="ico"><use href="#i-alert"/></svg><span><strong>You're the operator.</strong> You're responsible for your server and what happens on it.</span></li>
+            <li><svg class="ico"><use href="#i-alert"/></svg><span><strong>Made for small groups who already know each other,</strong> not public communities. Younger users should have a parent or guardian involved.</span></li>
+            <li><svg class="ico"><use href="#i-alert"/></svg><span><strong>Iridium keeps status and posts in plain text</strong> on your server.</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="note reveal">Each project ships with a plain-English responsible-use guide covering what the software is for, what it isn't for, and the moderation tools available to whoever runs it.</p>
+    </div>
+  </section>
+
+  <!-- GET -->
+  <section id="get">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Get started</span>
+        <h2>Pick one, or run both.</h2>
+        <p>Downloads and source links appear here as each release is published.</p>
+      </div>
+      <div class="get">
+        <div class="get-card reveal">
+          <div class="get-top"><img src="assets/xenon-mark.svg" alt="" /><div><h3>Xenon</h3><small>Private chat · web, desktop, Android</small></div></div>
+          <ul>
+            <li><svg class="ico"><use href="#i-check"/></svg>Windows, macOS &amp; Linux desktop apps</li>
+            <li><svg class="ico"><use href="#i-check"/></svg>Installable on iPhone &amp; Android</li>
+            <li><svg class="ico"><use href="#i-check"/></svg>Free and MIT licensed</li>
+          </ul>
+          <div class="btns">
+            <a class="btn primary" data-link="xenon.desktop" href="#get">Download desktop app</a>
+            <a class="btn" data-link="xenon.source" href="#get">Source code</a>
+          </div>
+        </div>
+        <div class="get-card reveal" style="--d:80ms">
+          <div class="get-top"><img src="assets/iridium-mark.svg" alt="" /><div><h3>Iridium</h3><small>Live hangout status · web app</small></div></div>
+          <ul>
+            <li><svg class="ico"><use href="#i-check"/></svg>Installs from the browser on any phone</li>
+            <li><svg class="ico"><use href="#i-check"/></svg>Desktop app in the works</li>
+            <li><svg class="ico"><use href="#i-check"/></svg>Free and MIT licensed</li>
+          </ul>
+          <div class="btns">
+            <a class="btn silver" data-link="iridium.source" href="#get">Source code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="head reveal"><span class="eyebrow">FAQ</span><h2>Good questions.</h2></div>
+      <div class="faq reveal">
+        <details><summary>Is it really free?</summary><p>Yes. Both apps are MIT licensed. The only cost is hosting, and a spare computer works fine.</p></details>
+        <details><summary>Do I need to be technical to run it?</summary><p>A little — you install Node.js and run two commands. Friends joining need nothing at all; they just open a link.</p></details>
+        <details><summary>Does it work on iPhone and Android?</summary><p>Yes. Open it in Safari or Chrome and choose Add to Home Screen — it installs like an app. Xenon also has desktop apps for Windows, macOS and Linux.</p></details>
+        <details><summary>Is it okay for teens?</summary><p>It's designed for small groups of people who already know each other, with no public discovery or strangers. Whoever runs the server is responsible for it, and younger users should have a parent or guardian involved.</p></details>
+        <details><summary>Does this website track me?</summary><p>No. This page loads nothing from third parties — no analytics, no external fonts, no scripts from elsewhere.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="#top"><span class="brand-dot"></span>HKugz</a>
+    <nav aria-label="Footer"><a href="#apps">Apps</a><a href="#design">Design</a><a href="#honest">Straight talk</a><a href="#faq">FAQ</a></nav>
+    <span>MIT licensed · © <span id="year">2026</span> HKugz · No trackers</span>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
