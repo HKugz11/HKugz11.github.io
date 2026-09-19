@@ -1,12 +1,17 @@
 (function () {
   'use strict';
 
-  // Fill these in as releases are published. Empty = the button shows a "soon" badge instead of a dead link.
+  // The GitHub links are wired up but switched OFF: the repositories are private, so a link would just
+  // show visitors a 404. When you make them public (after the safety checklist is done), change
+  // REPOS_PUBLIC to true and every "soon" badge turns into a real link.
+  var REPOS_PUBLIC = false;
+  var GITHUB = 'https://github.com/HKugz11';
   var LINKS = {
-    xenon: { source: '', desktop: '' },
-    iridium: { source: '' },
-    support: { donate: '' }
+    xenon: { source: GITHUB + '/xenon', desktop: GITHUB + '/xenon/releases/latest' },
+    iridium: { source: GITHUB + '/iridium' },
+    support: { donate: '' } // needs a payment account set up with a parent first
   };
+  if (!REPOS_PUBLIC) { LINKS.xenon = { source: '', desktop: '' }; LINKS.iridium = { source: '' }; }
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -67,7 +72,7 @@
   }
 
   // accent picker: recolors the whole page (and remembers it on this device)
-  var ACCENTS = ['teal', 'mint', 'sky', 'blue', 'violet', 'orchid', 'rose', 'silver'];
+  var ACCENTS = ['teal', 'mint', 'sky', 'blue', 'violet', 'orchid', 'coral', 'silver'];
   var swBtns = document.querySelectorAll('button.sw[data-accent]');
   var setAccent = function (name, save) {
     if (ACCENTS.indexOf(name) < 0) return;
@@ -75,7 +80,10 @@
     swBtns.forEach(function (b) { b.setAttribute('aria-checked', String(b.getAttribute('data-accent') === name)); });
     if (save) { try { localStorage.setItem('nbl_accent', name); } catch (e) { /* private mode */ } }
   };
-  try { setAccent(localStorage.getItem('nbl_accent'), false); } catch (e) { /* no storage */ }
+  try {
+    var savedAccent = localStorage.getItem('nbl_accent');
+    setAccent(savedAccent === 'rose' ? 'coral' : savedAccent, false); // "rose" was renamed to "coral"
+  } catch (e) { /* no storage */ }
   swBtns.forEach(function (b) {
     b.addEventListener('click', function () { setAccent(b.getAttribute('data-accent'), true); });
   });
