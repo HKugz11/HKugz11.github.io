@@ -8,10 +8,9 @@
   var GITHUB = 'https://github.com/HKugz11';
   var LINKS = {
     xenon: { source: GITHUB + '/xenon', desktop: GITHUB + '/xenon/releases/latest' },
-    iridium: { source: GITHUB + '/iridium' },
     support: { donate: '' } // needs a payment account set up with a parent first
   };
-  if (!REPOS_PUBLIC) { LINKS.xenon = { source: '', desktop: '' }; LINKS.iridium = { source: '' }; }
+  if (!REPOS_PUBLIC) { LINKS.xenon = { source: '', desktop: '' }; }
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

@@ -361,6 +361,9 @@ button.sw i { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08); }
 
 @media (max-width: 720px) { .about-tiles { gap: 10px; } .el { padding: 10px; } .el b { font-size: 1.9rem; } }
 
+/* one-app layout (Iridium's status + "down to play" now live inside Xenon) */
+.apps.single, .get.single { grid-template-columns: minmax(0, 1fr); max-width: 780px; margin-inline: auto; }
+
 /* ---------- setup guide ---------- */
 .note.preview { margin: 28px 0 0; padding: 14px 18px; border-radius: 14px; border: 1px solid rgba(var(--accent-rgb), 0.35); background: rgba(var(--accent-rgb), 0.07); color: var(--fg); font-size: 0.95rem; }
 .need { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 22px 0 0; }
